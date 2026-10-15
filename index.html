@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="logo" id="logo">Portfolio</a>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <p class="eyebrow" id="hero-title"></p>
+      <h1>Hi, I'm <span class="accent" id="hero-name"></span></h1>
+      <p class="lead" id="hero-tagline"></p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        <a href="#" class="btn btn-ghost cv-btn" hidden>Download CV ↓</a>
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h2>About me</h2>
+      <p class="about-text" id="about-text"></p>
+    </section>
+
+    <section id="skills" class="section container">
+      <h2>Skills</h2>
+      <ul class="skills" id="skills-list"></ul>
+    </section>
+
+    <section id="projects" class="section container">
+      <h2>Projects</h2>
+      <div class="grid" id="projects-list"></div>
+    </section>
+
+    <section id="experience" class="section container">
+      <h2>Experience</h2>
+      <div class="timeline" id="experience-list"></div>
+    </section>
+
+    <section id="contact" class="section container contact">
+      <h2>Let's work together</h2>
+      <p>Have a project in mind or want to say hello? My inbox is open.</p>
+      <div class="hero-actions contact-actions">
+        <a class="btn btn-primary" id="contact-email" href="#">Email me</a>
+        <a href="#" class="btn btn-ghost cv-btn" hidden>Download CV ↓</a>
+      </div>
+      <div class="socials" id="socials"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span id="footer-text"></span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

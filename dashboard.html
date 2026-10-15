@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <span class="logo">Dashboard</span>
+      <nav>
+        <a href="index.html" target="_blank">View site ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container dash">
+    <div class="toolbar">
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-tab="profile">Profile</button>
+        <button class="tab" data-tab="skills">Skills</button>
+        <button class="tab" data-tab="projects">Projects</button>
+        <button class="tab" data-tab="experience">Experience</button>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="save-btn">Save changes</button>
+        <button class="btn btn-ghost" id="export-btn" title="Download data.js to publish your changes">Export data.js</button>
+        <label class="btn btn-ghost" title="Load a previously exported file">
+          Import
+          <input type="file" id="import-input" accept=".js,.json" hidden>
+        </label>
+        <button class="btn btn-danger" id="reset-btn">Reset</button>
+      </div>
+    </div>
+
+    <p class="hint">
+      <strong>Save changes</strong> updates the site in this browser.
+      To publish for everyone, click <strong>Export data.js</strong> and replace the
+      <code>data.js</code> file in your website folder.
+    </p>
+
+    <!-- Profile -->
+    <section class="panel active" id="panel-profile">
+      <div class="form-grid">
+        <label>Name <input data-profile="name"></label>
+        <label>Title <input data-profile="title"></label>
+        <label class="full">Tagline <input data-profile="tagline"></label>
+        <label class="full">About <textarea rows="5" data-profile="about"></textarea></label>
+        <label>Email <input type="email" data-profile="email"></label>
+        <label>Location <input data-profile="location"></label>
+        <label>GitHub URL <input data-profile="github" placeholder="https://github.com/..."></label>
+        <label>LinkedIn URL <input data-profile="linkedin" placeholder="https://linkedin.com/in/..."></label>
+      </div>
+
+      <div class="cv-box">
+        <div>
+          <strong>CV / Resume (PDF)</strong>
+          <p class="muted" id="cv-status">No CV uploaded</p>
+        </div>
+        <div class="actions">
+          <label class="btn btn-primary">
+            Upload PDF
+            <input type="file" id="cv-input" accept="application/pdf" hidden>
+          </label>
+          <button class="btn btn-danger" id="cv-remove" hidden>Remove</button>
+        </div>
+        <label class="full">Or link to a CV hosted elsewhere (used only if no PDF is uploaded)
+          <input data-profile="resume" placeholder="https://drive.google.com/...">
+        </label>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="panel" id="panel-skills">
+      <form class="add-skill" id="add-skill-form">
+        <input id="new-skill" placeholder="Add a skill, e.g. Vue.js">
+        <button class="btn btn-primary" type="submit">Add</button>
+      </form>
+      <ul class="skill-editor" id="skill-editor"></ul>
+    </section>
+
+    <!-- Projects -->
+    <section class="panel" id="panel-projects">
+      <div id="project-editor" class="item-list"></div>
+      <button class="btn btn-ghost add-btn" data-add="projects">+ Add project</button>
+    </section>
+
+    <!-- Experience -->
+    <section class="panel" id="panel-experience">
+      <div id="experience-editor" class="item-list"></div>
+      <button class="btn btn-ghost add-btn" data-add="experience">+ Add experience</button>
+    </section>
+  </main>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
